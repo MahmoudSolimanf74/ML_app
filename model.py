@@ -6,9 +6,9 @@ import numpy as np
 import re
 from typing import Any
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))  # بيرجع لـ Model_app
-PIPE_PATH = os.path.join(BASE_DIR, "pipe.pkl")
-COLUMNS_PATH = os.path.join(BASE_DIR, "columns.pkl")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # المسار الحالي لـ main.py
+PIPE_PATH = os.path.join(BASE_DIR, "ML", "model", "pipe.pkl")
+COLUMNS_PATH = os.path.join(BASE_DIR, "ML", "model", "columns.pkl")
 
 pipe = joblib.load(PIPE_PATH)       # Pipeline كامل: preprocessing + model
 model_columns = joblib.load(COLUMNS_PATH)
